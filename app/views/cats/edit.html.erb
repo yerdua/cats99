@@ -1,5 +1,5 @@
 <h2>Cat Edit form!</h2>
-<form action="/cats/1" method="post">
+<form action="/cats/<%= @cat.id %>" method="post">
 	<input type="hidden" value="put" name="_method">
   <!-- label's `for` attribute connects with the input's `id` attribute-->
   <label for="cat_name">First name</label>

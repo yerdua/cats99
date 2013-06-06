@@ -33,4 +33,8 @@ class CatsController < ApplicationController
     @cat.save
     redirect_to cats_url
   end
+
+  def destroy
+    Cat.find(params[:id]).destroy
+  end
 end

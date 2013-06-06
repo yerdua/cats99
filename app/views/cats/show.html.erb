@@ -4,4 +4,17 @@
     <li><%= @cat.inspect %></li>
 </ul>
 
-<%= link_to "Create new cat!", new_cat_url %>
+<%= link_to "request this cat!", new_cat_cat_rental_request_path(@cat) %>
+
+<h4>requests for this cat</h4>
+<ul>
+
+	<% @cat.cat_rental_requests.each do |request| %>
+	<li>
+		<%= request.inspect %>
+		<%= button_to 'Approve', approve_request_url(request.id), :method => :put %>
+
+	</li>
+	<%end%>
+
+</ul>
